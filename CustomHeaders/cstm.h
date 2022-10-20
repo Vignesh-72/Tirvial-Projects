@@ -1,3 +1,4 @@
+
 #include <bits/stdc++.h>
 #include <chrono> 
 
@@ -103,7 +104,20 @@ namespace Algorithm{
         }
         return -1;
     }
+    void insertionSort(int arr[], int n){
+	int i, key, j;
+	for (i = 1; i < n; i++)
+	{
+	  key = arr[i];
+	  j = i - 1;
 
+	while (j >= 0 && arr[j] > key){
+		arr[j + 1] = arr[j];
+		j = j - 1;
+	}
+	arr[j + 1] = key;
+	}
+    }
 }
 namespace DS{
 
@@ -362,7 +376,6 @@ void BST::inorder(BST* root){
     inorder(root->left);
     std::cout<<root->data<<std::endl;
     inorder(root->right);
-
 }
-
+	
 }
