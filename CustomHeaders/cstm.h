@@ -1,6 +1,4 @@
-
 #include <bits/stdc++.h>
-#include <chrono> 
 
 namespace cstm{
 
@@ -175,6 +173,7 @@ void linkedList::del(int key){
         temp = temp->next;
     }    
 }
+
 void linkedList::print(){
     using namespace std;
 
@@ -185,6 +184,7 @@ void linkedList::print(){
     }
     cout<<"NULL"<<endl;
 }
+	
 void linkedList::insertAfter(int key, int value){
     Node* new_node = new Node(value);
 
@@ -202,6 +202,7 @@ void linkedList::insertAfter(int key, int value){
     new_node->next = temp;
     prev->next = new_node;
 }
+	
 void linkedList::insertTail(int value){
     Node* new_node  = new Node(value);
     if(head->next == NULL){
@@ -214,6 +215,7 @@ void linkedList::insertTail(int value){
     }
     temp->next = new_node;
 }
+	
 class DPNode{
     public:
         int data;
@@ -225,6 +227,7 @@ class DPNode{
             prev = NULL;
         }
 };
+	
 class doubleLinkedList{
         DPNode* head;
     public:
@@ -237,6 +240,7 @@ class doubleLinkedList{
         void insertAfter(int,int);
         void insertTail(int);
 };
+	
 void doubleLinkedList::insertHead(int value){
     DPNode* new_DPnode = new DPNode(value);
     if(head == NULL){
@@ -251,6 +255,7 @@ void doubleLinkedList::insertHead(int value){
 	
 	head = new_DPnode;
 }
+	
 void doubleLinkedList::insertDPNode(int value){
 
     if(head == NULL){
@@ -267,6 +272,7 @@ void doubleLinkedList::insertDPNode(int value){
     temp->next = new_DPnode;
     
 }
+	
 void doubleLinkedList::print(){
     using namespace std;
     
@@ -282,6 +288,7 @@ void doubleLinkedList::print(){
 	}
 	cout << "NULL" << endl;
 }
+	
 void doubleLinkedList::del(int key){
     DPNode* temp = head;
     if(temp->data == key){
@@ -299,6 +306,7 @@ void doubleLinkedList::del(int key){
     tempNextPrev->prev = prev; // temp next = prev
 
 }
+	
 void doubleLinkedList::insertAfter(int key , int value){
     DPNode* new_DPnode = new DPNode(value);
     if(head == NULL){
@@ -316,6 +324,7 @@ void doubleLinkedList::insertAfter(int key , int value){
     prev->next = new_DPnode;
     temp->prev = new_DPnode;
 }
+	
 void doubleLinkedList::insertTail(int value){
     DPNode* new_DPnode = new DPNode(value);
     if(head == NULL){
@@ -344,6 +353,7 @@ class BST{
     void inorder(BST*);
 
 };
+	
 BST ::BST(): data(0), left(NULL), right(NULL){}
 
 BST* BST::insert(BST* root, int key){
@@ -376,6 +386,7 @@ void BST::inorder(BST* root){
     inorder(root->left);
     std::cout<<root->data<<std::endl;
     inorder(root->right);
+
 }
 	
 }
